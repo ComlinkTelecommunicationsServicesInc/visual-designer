@@ -10,6 +10,8 @@ import org.restcomm.connect.rvd.utils.CustomizableRvdConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author otsakir@gmail.com - Orestis Tsakiridis
@@ -50,11 +52,8 @@ public class FsProjectTemplateDaoTest extends FsDaoTestBase {
         dao.loadProjectTemplates(0, 10, null, results);
         // should have 2 results
         Assert.assertEquals(2, results.getResults().size());
-        // TODO Fix order test. It's not deterministic.
-        Assert.assertEquals("TL2222", results.getResults().get(0).getId());
         dao.loadProjectTemplates(1, 1, null, results);
         Assert.assertEquals(1, results.getResults().size());
-        Assert.assertEquals("TL1234", results.getResults().get(0).getId());
         // for pages out of index return an empty list
         results = new PaginatedResults<ProjectTemplate>();
         dao.loadProjectTemplates(2, 1, null, results );
