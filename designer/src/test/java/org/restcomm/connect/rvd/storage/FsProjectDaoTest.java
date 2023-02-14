@@ -16,6 +16,7 @@ import org.restcomm.connect.rvd.utils.CustomizableRvdConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -89,13 +90,18 @@ public class FsProjectDaoTest extends FsDaoTestBase {
         List<WavItem> wavs = dao.listMedia(PROJECT_NAME);
         Assert.assertEquals(0, wavs.size());
 
+        List<String> audioFileNames = new ArrayList<>();
+        audioFileNames.add("onhold.wav");
+        audioFileNames.add("intro.mp4");
+
         // create a project with some media
         String projectName = "APprojectwithmedia";
         File projectWithWavs = TestUtils.createProjectWithMedia(projectName, "orestis", workspaceDir, marshaler, configuration);
         wavs = dao.listMedia(projectName);
         Assert.assertEquals(2, wavs.size());
-        Assert.assertEquals("onhold.wav", wavs.get(1).getFilename());
-        Assert.assertEquals("intro.mp4", wavs.get(0).getFilename());
+        Assert.assertTrue(!wavs.get(1).getFilename().equals(wavs.get(0).getFilename()));
+        Assert.assertTrue(audioFileNames.contains(wavs.get(1).getFilename()));
+        Assert.assertTrue(audioFileNames.contains(wavs.get(0).getFilename()));
 
         // check addRawResource
         String absoluteResourcePath = projectWithWavs.getPath() + File.separator + RvdConfiguration.WAVS_DIRECTORY_NAME;

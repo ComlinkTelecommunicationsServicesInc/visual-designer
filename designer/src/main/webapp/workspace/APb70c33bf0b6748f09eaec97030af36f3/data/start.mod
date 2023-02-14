@@ -1,1 +1,1 @@
-{"name":"start","label":"Welcome","kind":"voice","steps":[{"phrase":"Welcome to Telestax Restcom Visual Designer Demo","kind":"say","label":"say","title":"say","name":"step1"}]}
+{"name":"start","label":"Welcome","kind":"voice","steps":[{"phrase":"Welcome to Comlink Visual Designer Demo","kind":"say","label":"say","title":"say","name":"step1"}]}

@@ -19,7 +19,7 @@ public interface RvdConfiguration {
     boolean DEFAULT_USE_HOSTNAME_TO_RESOLVE_RELATIVE_URL = true;
     boolean DEFAULT_USE_ABSOLUTE_APPLICATION_URL = false;
     boolean DEFAULT_USSD_SUPPORT = true;
-    String DEFAULT_WELCOME_MESSAGE = "Welcome to Telestax Restcom Visual Designer Demo";
+    String DEFAULT_WELCOME_MESSAGE = "Welcome to Comlink Visual Designer Demo";
     boolean DEFAULT_DYNAMIC_RESTCOMM_RESOLVING = false;
     boolean DEFAULT_TEMPLATES_SUPPORT = true;
     String TEMPLATES_DIRECTORY_NAME = "@templates";
